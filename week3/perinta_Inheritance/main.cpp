@@ -24,9 +24,11 @@
 
 int main()
 {
+
     SonClass object;
 
-    object.showFamilyInfo();
+
+    //object.showFamilyInfo();
     object.showSonData();
 
 

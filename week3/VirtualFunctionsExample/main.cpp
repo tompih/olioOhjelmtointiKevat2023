@@ -33,7 +33,7 @@
 
 int main()
 {
-    DerivedClass object;
+    /*DerivedClass object;
 
     object.frequencyCorrection();
     object.syncronization();
@@ -41,13 +41,13 @@ int main()
     object.receiver();
     object.BaseClass::receiver();
     object.BaseClass::transmitter();
+    */
 
 
-/*
-    BaseClass *pBaseClass;
+    BaseClass * pBaseClass;
     pBaseClass = new DerivedClass;
 
     delete pBaseClass;
-*/
+
     return 0;
 }

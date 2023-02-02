@@ -2,9 +2,9 @@
 #define SONCLASS_H
 #include "fatherclass.h"
 
-class SonClass:public FatherClass
+//class SonClass:public FatherClass
 //class SonClass:protected FatherClass
-//class SonClass:private FatherClass
+class SonClass:private FatherClass
 {
 public:
     SonClass();
