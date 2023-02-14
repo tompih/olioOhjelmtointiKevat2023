@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QDebug>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -14,15 +15,10 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
 public slots:
-    void euroToCroneHandler();
-    void CroneToEuroHandler();
-
+    void handleTextChanged(QString);
 
 private:
     Ui::MainWindow *ui;
-    float euro,crone;
-    float rate = 0.088;
 };
 #endif // MAINWINDOW_H

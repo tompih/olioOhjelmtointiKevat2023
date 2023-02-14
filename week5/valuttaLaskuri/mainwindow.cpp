@@ -10,6 +10,8 @@ MainWindow::MainWindow(QWidget *parent)
     //           receiverAddress,SLOT(function2());
     connect(ui->CroneToEuro,SIGNAL(clicked()),
             this,SLOT(CroneToEuroHandler()));
+    connect(ui->EuroToCrone,SIGNAL(clicked()),
+            this,SLOT(euroToCroneHandler()));
 }
 
 MainWindow::~MainWindow()
@@ -19,20 +21,18 @@ MainWindow::~MainWindow()
 
 void MainWindow::euroToCroneHandler()
 {
-
+    QString luku = ui->Euros->text();
+    euro = luku.toFloat();
+    crone = euro / rate;
+    ui->Crones->setText(QString::number(crone));
 }
 
 void MainWindow::CroneToEuroHandler()
 {
-   ui->Crones->setText("100 kr");
-}
-
-
-void MainWindow::on_EuroToCrone_clicked()
-{
     QString luku = ui->Euros->text();
     euro = luku.toFloat();
-    crone = euro * rate;
+    crone = euro / rate;
     ui->Crones->setText(QString::number(crone));
 }
+
 
