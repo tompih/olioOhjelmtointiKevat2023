@@ -9,6 +9,8 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->text1,SIGNAL(textChanged(QString)),
             this,SLOT(handleTextChanged(QString)));
 
+
+
 }
 
 MainWindow::~MainWindow()
@@ -22,6 +24,7 @@ void MainWindow::handleTextChanged(QString s)
     static short n = 1;
     bool onnistuiko;
     short luku = s.toShort(&onnistuiko,10);
+
     if(onnistuiko == true)
     {
         qDebug()<<"QString => short onnistui luku = " << luku;
@@ -35,7 +38,7 @@ void MainWindow::handleTextChanged(QString s)
     t.append(s);
     //s = "";
     ui->Text2->setText(t);
-    ui->kolmas->setText(QString::number(n,16));
+    //ui->kolmas->setText(QString::number(n,16));
     n = n*10;
 
 }
