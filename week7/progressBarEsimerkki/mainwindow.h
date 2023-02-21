@@ -2,10 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "myclass.h"
-#include "toinenikkuna.h"
-
-
+#include <QTimer>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -19,16 +16,13 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-signals:
-
 public slots:
-    void nappiHandler();
-    void mySignalHandler(QString);
-
+    void clickHandler();
+    void timeoutHandler();
 
 private:
     Ui::MainWindow *ui;
-    myClass * pmyClass;
-    ToinenIkkuna * pToinenIkkuna;
+    QTimer * pQTimer;
+    int aika = 0;
 };
 #endif // MAINWINDOW_H

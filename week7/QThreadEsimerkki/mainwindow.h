@@ -3,9 +3,7 @@
 
 #include <QMainWindow>
 #include "myclass.h"
-#include "toinenikkuna.h"
-
-
+#include <QDebug>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -18,17 +16,13 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
-signals:
-
 public slots:
-    void nappiHandler();
-    void mySignalHandler(QString);
-
+    void startThreadAndPrint();
+    void stopHandler();
 
 private:
     Ui::MainWindow *ui;
-    myClass * pmyClass;
-    ToinenIkkuna * pToinenIkkuna;
+    myClass * pthread1;
+    myClass * pthread2;
 };
 #endif // MAINWINDOW_H

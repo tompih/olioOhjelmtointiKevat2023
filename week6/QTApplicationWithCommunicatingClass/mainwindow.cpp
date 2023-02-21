@@ -8,6 +8,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     pmyClass = new myClass(this);
 
+    pToinenIkkuna = new ToinenIkkuna();
+
     connect(ui->nappi,SIGNAL(clicked()),
             this,SLOT(nappiHandler()),Qt::QueuedConnection);
 
@@ -21,6 +23,7 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
+    delete pToinenIkkuna;
     //delete pmyClass;
 }
 
