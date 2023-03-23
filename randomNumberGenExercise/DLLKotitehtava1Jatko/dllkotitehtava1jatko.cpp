@@ -23,6 +23,7 @@ void DLLKotitehtava1Jatko::generate()
 
 void DLLKotitehtava1Jatko::receiveNumber(int n)
 {
+
     qDebug()<<"Vastaanotin numeron enginelta ja lahetan sen EXE:lle";
     emit sendNumberToExe(n);
 }
