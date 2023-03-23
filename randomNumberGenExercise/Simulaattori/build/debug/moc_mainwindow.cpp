@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    const uint offsetsAndSize[10];
-    char stringdata0[60];
+    const uint offsetsAndSize[12];
+    char stringdata0[78];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(offsetof(qt_meta_stringdata_MainWindow_t, stringdata0) + ofs), len 
@@ -33,11 +33,12 @@ QT_MOC_LITERAL(0, 10), // "MainWindow"
 QT_MOC_LITERAL(11, 12), // "clickHandler"
 QT_MOC_LITERAL(24, 0), // ""
 QT_MOC_LITERAL(25, 17), // "receiveCardNumber"
-QT_MOC_LITERAL(43, 16) // "receivePinNumber"
+QT_MOC_LITERAL(43, 16), // "receivePinNumber"
+QT_MOC_LITERAL(60, 17) // "handleRFIDTimeout"
 
     },
     "MainWindow\0clickHandler\0\0receiveCardNumber\0"
-    "receivePinNumber"
+    "receivePinNumber\0handleRFIDTimeout"
 };
 #undef QT_MOC_LITERAL
 
@@ -47,7 +48,7 @@ static const uint qt_meta_data_MainWindow[] = {
       10,       // revision
        0,       // classname
        0,    0, // classinfo
-       3,   14, // methods
+       4,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -55,14 +56,16 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   32,    2, 0x08,    1 /* Private */,
-       3,    1,   33,    2, 0x08,    2 /* Private */,
-       4,    1,   36,    2, 0x08,    4 /* Private */,
+       1,    0,   38,    2, 0x08,    1 /* Private */,
+       3,    1,   39,    2, 0x08,    2 /* Private */,
+       4,    1,   42,    2, 0x08,    4 /* Private */,
+       5,    0,   45,    2, 0x0a,    6 /* Public */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void, QMetaType::Short,    2,
     QMetaType::Void, QMetaType::Short,    2,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -76,6 +79,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 0: _t->clickHandler(); break;
         case 1: _t->receiveCardNumber((*reinterpret_cast< std::add_pointer_t<short>>(_a[1]))); break;
         case 2: _t->receivePinNumber((*reinterpret_cast< std::add_pointer_t<short>>(_a[1]))); break;
+        case 3: _t->handleRFIDTimeout(); break;
         default: ;
         }
     }
@@ -89,7 +93,7 @@ const QMetaObject MainWindow::staticMetaObject = { {
     nullptr,
 qt_incomplete_metaTypeArray<qt_meta_stringdata_MainWindow_t
 , QtPrivate::TypeAndForceComplete<MainWindow, std::true_type>
-, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<short, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<short, std::false_type>
+, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<short, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<short, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
 
 
 >,
@@ -116,13 +120,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 3)
+        if (_id < 4)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 3;
+        _id -= 4;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 3)
+        if (_id < 4)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 3;
+        _id -= 4;
     }
     return _id;
 }

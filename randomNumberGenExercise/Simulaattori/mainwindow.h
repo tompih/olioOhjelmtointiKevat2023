@@ -3,7 +3,8 @@
 
 #include <QMainWindow>
 #include "rfidreader.h"
-#include "pinui.h"
+
+#include "dialog.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -21,12 +22,16 @@ private slots:
     void clickHandler();
     void receiveCardNumber(short);
     void receivePinNumber(short);
+public slots:
+    void handleRFIDTimeout();
 
 private:
     Ui::MainWindow *ui;
     RFIDreader * pRFIDreader;
-    PINui * pPINui;
+
+    Dialog * pDialog;
     void updateUI();
+    void checkNumbers();
     short cardNumber,pinNumber,attemps,correctCard,correctPin;
 
 };

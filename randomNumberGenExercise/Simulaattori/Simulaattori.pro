@@ -11,20 +11,22 @@ CONFIG += c++17
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
-    pinui.cpp \
     rfidreader.cpp
 
 HEADERS += \
     mainwindow.h \
-    pinui.h \
     rfidreader.h
 
 FORMS += \
     mainwindow.ui \
-    pinui.ui \
     rfidreader.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+win32: LIBS += -L$$PWD/../pinUIDLL/build/debug/ -lpinUIDLL
+
+INCLUDEPATH += $$PWD/../pinUIDLL
+DEPENDPATH += $$PWD/../pinUIDLL
